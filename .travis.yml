@@ -8,6 +8,8 @@ before_install:
     - tar xvf secrets.tar && rm secrets.tar && mv id_rsa ~/.ssh/ && mv hub-config ~/.config/hub
     - wget -q https://github.com/github/hub/releases/download/v2.5.0/hub-linux-amd64-2.5.0.tgz
     - tar xzf hub-linux-amd64-2.5.0.tgz && mv hub-linux-amd64-2.5.0/bin/hub . && chmod 755 hub
+    - find ~/.phpenv -name xdebug.ini -delete
+    - composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-master
 
 script:
     - |
